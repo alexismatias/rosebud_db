@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Reflections</h1>
+
+<div id="reflections">
+  <% @reflections.each do |reflection| %>
+    <%= render reflection %>
+    <p>
+      <%= link_to "Show this reflection", reflection %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New reflection", new_reflection_path %>

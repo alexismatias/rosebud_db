@@ -1,0 +1,42 @@
+<%= form_with(model: reflection) do |form| %>
+  <% if reflection.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(reflection.errors.count, "error") %> prohibited this reflection from being saved:</h2>
+
+      <ul>
+        <% reflection.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :item, style: "display: block" %>
+    <%= form.text_field :item %>
+  </div>
+
+  <div>
+    <%= form.label :cost, style: "display: block" %>
+    <%= form.text_field :cost %>
+  </div>
+
+  <div>
+    <%= form.label :expense_category, style: "display: block" %>
+    <%= form.text_field :expense_category %>
+  </div>
+
+  <div>
+    <%= form.label :emotion, style: "display: block" %>
+    <%= form.text_field :emotion %>
+  </div>
+
+  <div>
+    <%= form.label :comment, style: "display: block" %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
